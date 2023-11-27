@@ -7,14 +7,12 @@ async function handleLoginForm(form){
 
     const config = {
 	method: "POST",
-	mode: "no-cors",
 	headers: {
-	    "Content-Type": "application/json"
+	    "Access-Control-Allow-Origin": "http://localhost:23733/",
 	},
 	body: credentials
     }
-    const response = await fetch("http://127.0.0.1:5000/login", config);
+    const response = await fetch("http://127.0.0.1:5000/api/v1/login", config);
     const data = await response.json();
-
     console.log(data);
 }
